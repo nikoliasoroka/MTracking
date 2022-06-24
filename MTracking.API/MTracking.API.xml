@@ -1,0 +1,411 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MTracking.API</name>
+    </assembly>
+    <members>
+      <member name="M:MTracking.API.Controllers.AuthenticationController.Register(MTracking.BLL.DTOs.User.Requests.UserRegisterDto)">
+            <summary>
+            Register user into the system.
+            </summary>
+            <param name="userDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.AuthenticationController.Login(MTracking.BLL.DTOs.User.Requests.UserLoginDto)">
+            <summary>
+            Login user into the system.
+            </summary>
+            <param name="userDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.AuthenticationController.RefreshToken(System.String)">
+            <summary>
+            Get a new access token by the refresh token.
+            </summary>
+            <param name="refreshToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.AuthenticationController.ChangePassword(MTracking.BLL.DTOs.Authentication.Requests.ChangePasswordDto)">
+            <summary>
+            Change password.
+            </summary>
+            <param name="passwordDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.AuthenticationController.ForgotPassword(System.String)">
+            <summary>
+            Forgot password, send verification code.
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.AuthenticationController.SetNewPassword(MTracking.BLL.DTOs.Authentication.Requests.SetPasswordDto)">
+            <summary>
+            Set new password.
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.AuthenticationController.CheckCode(MTracking.BLL.DTOs.Authentication.Requests.CheckCodeDto)">
+            <summary>
+            Check verification code.
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.CheckController.IsSignUpNeeded">
+            <summary>
+            Check Is Sign Up Needed
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.CheckController.SendEmail(System.String)">
+            <summary>
+            Testing email sending
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.DescriptionController.GetDescription(System.Int32)">
+            <summary>
+            Get description by Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.DescriptionController.GetAll(MTracking.BLL.Models.Implementations.Generics.PaginationParams)">
+            <summary>
+            Get all descriptions.
+            </summary>
+            <param name="paginationParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.DescriptionController.Search(MTracking.BLL.Models.Implementations.Generics.PaginationParams,System.String)">
+            <summary>
+            Search descriptions by name.
+            </summary>
+            <param name="paginationParams"></param>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.DescriptionController.CreateCustomDescription(MTracking.BLL.DTOs.Description.Request.DescriptionCreateRequestDto)">
+            <summary>
+            Create custom description.
+            </summary>
+            <param name="descriptionDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.DescriptionController.UpdateDescription(MTracking.BLL.DTOs.Description.Request.DescriptionUpdateRequestDto)">
+            <summary>
+            Update custom description.
+            </summary>
+            <param name="descriptionDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.DescriptionController.DeleteDescription(System.Int32)">
+            <summary>
+            Delete custom description by Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.DeviceController.Register(MTracking.BLL.DTOs.Device.Request.DeviceDto)">
+            <summary>
+            Register unique device firebase token
+            </summary>
+            <param name="deviceDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.DeviceController.RemoveDevice(MTracking.BLL.DTOs.Device.Request.DeviceDto)">
+            <summary>
+            Logout device and clear firebase token.
+            </summary>
+            <param name="removeDeviceDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.DeviceController.TestFirebase(System.Collections.Generic.List{System.String},System.String,System.String)">
+            <summary>
+            Testing of firebase messages.
+            </summary>
+            <param name="tokens"></param>
+            <param name="title"></param>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.FileController.GetFileById(System.Int32)">
+            <summary>
+            Get file by Id.
+            </summary>
+            <param name="fileId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.FileController.GetAllFilesByUserId(MTracking.BLL.Models.Implementations.Generics.PaginationParams)">
+            <summary>
+            Get files by user.
+            </summary>
+            <param name="paginationParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.FileController.GetAllFiles(MTracking.BLL.Models.Implementations.Generics.PaginationParams)">
+            <summary>
+            Get all files.
+            </summary>
+            <param name="paginationParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.FileController.Search(MTracking.BLL.Models.Implementations.Generics.PaginationParams,System.String)">
+            <summary>
+            Search files by name.
+            </summary>
+            <param name="query"></param>
+            <param name="paginationParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.FileController.CreateFileByUser(MTracking.BLL.DTOs.File.Request.FileCreateRequestDto)">
+            <summary>
+            Create file by user.
+            </summary>
+            <param name="fileDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.FileController.CreateFile(MTracking.BLL.DTOs.File.Request.FileCreateRequestDto)">
+            <summary>
+            Create common file.
+            </summary>
+            <param name="fileDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.FileController.UpdateFile(MTracking.BLL.DTOs.File.Request.FileUpdateRequestDto)">
+            <summary>
+            Update file.
+            </summary>
+            <param name="fileDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.FileController.DeleteFile(System.Int32)">
+            <summary>
+            Delete file.
+            </summary>
+            <param name="fileId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.FileController.Pin(System.Int32)">
+            <summary>
+                Pin file.
+            </summary>
+            <param name="fileId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.FileController.UnPin(System.Int32)">
+            <summary>
+                UnPin file.
+            </summary>
+            <param name="fileId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MTracking.API.Controllers.ImportController">
+            <summary>
+            [System]
+            </summary>
+        </member>
+        <member name="M:MTracking.API.Controllers.ImportController.GetImport(MTracking.BLL.Models.Implementations.Generics.PaginationParams,MTracking.Core.Enums.ImportFileType)">
+            <summary>
+            [System] Get import records. 
+            </summary>
+            <param name="paginationParams"></param>
+            <param name="fileType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.ImportController.GetExport(MTracking.BLL.Models.Implementations.Generics.PaginationParams)">
+            <summary>
+            [System] Get inserted files.
+            </summary>
+            <param name="paginationParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.ReminderController.GetReminder(System.Int32)">
+            <summary>
+            Get reminder by Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.ReminderController.GetAll">
+            <summary>
+            Get all reminders.
+            </summary>
+            <param></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.ReminderController.CreateReminder(MTracking.BLL.DTOs.Reminder.Request.ReminderCreateRequestDto)">
+            <summary>
+            Create custom reminder.
+            </summary>
+            <param name="reminderDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.ReminderController.UpdateReminder(MTracking.BLL.DTOs.Reminder.Request.ReminderUpdateRequestDto)">
+            <summary>
+            Update reminder.
+            </summary>
+            <param name="reminderDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.ReminderController.DeleteReminder(System.Int32)">
+            <summary>
+            Delete reminder by Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TimeLogController.GetAllTimeLogs(MTracking.BLL.Models.Implementations.Generics.PaginationParams)">
+            <summary>
+            Get all TimeLogs by User (logging history).
+            </summary>
+            <param name="paginationParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TimeLogController.GetDailyTimeLogs(MTracking.BLL.Models.Implementations.Generics.PaginationParams)">
+            <summary>
+            Get daily TimeLogs by User.
+            </summary>
+            <param name="paginationParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TimeLogController.GetMonthlyTimeLogs(MTracking.BLL.Models.Implementations.Generics.PaginationParams)">
+            <summary>
+            Get monthly TimeLogs by User.
+            </summary>
+            <param name="paginationParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TimeLogController.GetTimeLog(System.Int32)">
+            <summary>
+            Get TimeLog by Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TimeLogController.Search(MTracking.BLL.Models.Implementations.Generics.PaginationParams,System.String)">
+            <summary>
+            Search TimeLogs by Topic's name, Description's name, File's name.
+            </summary>
+            <param name="query"></param>
+            <param name="paginationParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TimeLogController.SearchMonthly(MTracking.BLL.Models.Implementations.Generics.PaginationParams,System.String)">
+            <summary>
+            Search monthly TimeLogs by Topic's name, Description's name, File's name.
+            </summary>
+            <param name="query"></param>
+            <param name="paginationParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TimeLogController.GetStatistic">
+            <summary>
+            Get TimeLog daily and monthly statistic (app home screen).
+            </summary>
+            <param></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TimeLogController.CreateTimeLog(MTracking.BLL.DTOs.TimeLog.Request.TimeLogCreateRequestDto)">
+            <summary>
+            Create TimeLog.
+            </summary>
+            <param name="timeLogDto">workTime in minutes</param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TimeLogController.UpdateTimeLog(MTracking.BLL.DTOs.TimeLog.Request.TimeLogUpdateRequestDto)">
+            <summary>
+            Update TimeLog.
+            </summary>
+            <param name="timeLogDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TimeLogController.DeleteTimeLog(System.Int32)">
+            <summary>
+            Delete TimeLog by Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TimerController.Get">
+            <summary>
+            Get timer in seconds
+            </summary>
+            <param></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TimerController.StartTimer">
+            <summary>
+            Start timer.
+            </summary>
+            <param></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TimerController.StopTimer">
+            <summary>
+            Stop timer.
+            </summary>
+            <param></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TimerController.ContinueTimer">
+            <summary>
+            Continue timer.
+            </summary>
+            <param></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TimerController.ResetTimer">
+            <summary>
+            Reset timer.
+            </summary>
+            <param></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TopicController.GetTopic(System.Int32)">
+            <summary>
+            Get topic by Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TopicController.GetAll(MTracking.BLL.Models.Implementations.Generics.PaginationParams)">
+            <summary>
+            Get all topics.
+            </summary>
+            <param name="paginationParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TopicController.Search(MTracking.BLL.Models.Implementations.Generics.PaginationParams,System.String)">
+            <summary>
+            Search topics by name.
+            </summary>
+            <param name="query"></param>
+            <param name="paginationParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TopicController.CreateCustomTopic(MTracking.BLL.DTOs.Topic.Request.TopicCreateRequestDto)">
+            <summary>
+            Create custom topic.
+            </summary>
+            <param name="topicDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TopicController.UpdateTopic(MTracking.BLL.DTOs.Topic.Request.TopicUpdateRequestDto)">
+            <summary>
+            Update custom topic.
+            </summary>
+            <param name="TopicDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MTracking.API.Controllers.TopicController.DeleteTopic(System.Int32)">
+            <summary>
+            Delete custom topic by Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

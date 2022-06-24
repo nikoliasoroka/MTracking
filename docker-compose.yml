@@ -1,0 +1,51 @@
+version: "3"
+services:
+    web:
+        build: .
+        volumes:
+            - /mnt/import/Data:/import:shared
+            - /mnt/export:/export:shared
+        environment:
+            RDS_PORT: 1433
+            RDS_DB_NAME: master
+            RDS_SERVER: db
+            RDS_USERID: sa
+            RDS_PASSWORD: Localpassword12
+        depends_on: 
+            - db
+        restart: always
+
+    db:
+        image: "mcr.microsoft.com/mssql/server:2017-CU21-ubuntu-16.04"
+        environment:
+            SA_PASSWORD: "Localpassword12"
+            ACCEPT_EULA: "Y"
+        volumes:
+            - db_data:/var/opt/mssql/data
+        restart: always
+
+    nginx:
+        build:  ../frontend
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./data/nginx:/etc/nginx/conf.d
+            - ./data/certbot/conf:/etc/letsencrypt
+            - ./data/certbot/www:/var/www/certbot
+        command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+        depends_on: 
+            - web
+            - db
+        restart: always
+
+    certbot:
+        image: certbot/certbot
+        volumes:
+            - ./data/certbot/conf:/etc/letsencrypt
+            - ./data/certbot/www:/var/www/certbot
+        entrypoint:  "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+        restart: always
+
+volumes:
+    db_data:
